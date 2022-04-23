@@ -13,6 +13,9 @@ function MyApp({ Component, pageProps }) {
       error: { main: "#FF5B5B" },
       success: { main: "#68DB40" },
     },
+    typography: {
+      fontFamily: 'Mitr'
+    }
   });
 
   React.useEffect(() => {
@@ -31,6 +34,9 @@ function MyApp({ Component, pageProps }) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700" rel="stylesheet"/>
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
