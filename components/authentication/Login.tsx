@@ -23,14 +23,15 @@ const Login: FC = () => {
       if(parseInt(values.id.substring(0, 2)) < 61){
         return setErrorMessage("สงวนสิทธิ์ให้นักศึกษามจธ.รหัส 61 - 64 เท่านั้น")
       }
+      if(today.getMonth() !== 5 || today.getDate() > 19 || today.getDate() < 18 || today.getFullYear() !== 2022){
+        return setErrorMessage('ไม่อยู่ในช่วงเวลาลงคะแนน')
+      }
       axios.post('/api/auth/login',{
         username: values.id,
         password: values.password
       })
       .then((res)=>{
-        if(today.getMonth() !== 5 || today.getDate() > 19 || today.getDate() < 18 || today.getFullYear() !== 2022){
-          return setErrorMessage('ไม่อยู่ในช่วงเวลาลงคะแนน')
-        }
+       
         const user = new User(res.data);
         sessionStorage.setItem('user',JSON.stringify(user));
         Router.push('/student');
