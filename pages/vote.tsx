@@ -74,7 +74,7 @@ const Vote: FC = () => {
       การลงคะแนนเสียงจะสามารถเลือกได้เพียง
       รับรอง, ไม่รับรอง, และไม่ประสงค์ลงคะแนน`}
       buttons={buttonList}
-      image='/images/samo65.png'
+      image='/images/samo65.jpeg'
     />
   );
 };
