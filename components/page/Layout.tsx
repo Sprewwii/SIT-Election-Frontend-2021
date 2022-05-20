@@ -21,9 +21,9 @@ const Layout: FC<ILayout> = (props) => {
         </Box>
         {image && (
           <Box display='flex' mt={3} justifyContent='center'>
-            <Box border={2} borderColor='#326295' width={200} borderRadius={4}>
+            <Box border={2} borderColor='#326295' width={202} borderRadius={4}>
               <Box
-                height={290}
+                height={260}
                 display='flex'
                 justifyContent='center'
                 alignItems='center'>
