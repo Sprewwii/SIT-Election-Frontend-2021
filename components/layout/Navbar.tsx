@@ -19,7 +19,7 @@ const Navbar: FC = () => {
     <AppBar position='static'>
       <Toolbar>
         <Typography variant='h6' className={classes.head} sx={{ flexGrow: 1 }}>
-          SIT Election System
+          SAMOSIT Election System
         </Typography>
         <Button color='inherit' onClick={()=>{logout()}}>Logout</Button>
       </Toolbar>

@@ -17,13 +17,15 @@ const Login: FC = () => {
     },
     onSubmit: (values) => {
       const today = new Date();
+      const openTime = new Date("May 21, 2022 08:00:00")
+      const closeTime = new Date("May 22, 2022 17:00:00")
       if(!values.id.trim() || !values.password.trim()){
         return setErrorMessage("กรุณากรอกรหัสนักศึกษาและรหัสผ่าน")
       }
       if(parseInt(values.id.substring(0, 2)) < 61){
         return setErrorMessage("สงวนสิทธิ์ให้นักศึกษามจธ.รหัส 61 - 64 เท่านั้น")
       }
-      if(today.getMonth() !== 5 || today.getDate() > 19 || today.getDate() < 18 || today.getFullYear() !== 2022){
+      if(today<openTime || today>closeTime){
         return setErrorMessage('ไม่อยู่ในช่วงเวลาลงคะแนน')
       }
       axios.post('/api/auth/login',{
